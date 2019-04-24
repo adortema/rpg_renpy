@@ -110,10 +110,15 @@ label start:
                               borbotones de sangre empiezan a salirle e intenta recuperarse para intentas pegarte"
                              "pero no lo logra "
                              call combate
+                             
+                             
+                             
 
                     "llamarle con una line Epica ":
 
-                        "hola mama"
+                        "Oros... Ogro estupido, Hoy sera el dia que perderas la cabeza por lo que hiciste 
+					     en Amadore, y le atacas con un amplio corte en horizontal"
+                         
 
 
                     " LLamarle e insultarle ":
