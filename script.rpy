@@ -8,6 +8,9 @@ define enemigo = " "
 define heroe_vida_max = 200
 define heroe_hp = heroe_vida_max
 define ataher= 100
+define a = Character("Ardio")
+
+$ enemigo = "ogro"
 
 # El juego comienza aquí.
 
@@ -99,41 +102,185 @@ label start:
                         $ x = renpy.random.randint(1, 20)
                         if x <= 6:
                              "pero intentando ser sigilosos no usas fuerza suficiente para atravezar su piel"
-                             call combate
+                             #call combate
                              jump continuar_1
                         if x>=7 and x <= 18:
                              "encuentras un equlibrio en el ataque y logras acertarle
                               un buen golpe antes que se levante"
-                             call combate
+                             #call combate
                         if x==19 or x==20:
                              "Logras clavarle la espada muy profunda, causando que este grite de dolor...
                               borbotones de sangre empiezan a salirle e intenta recuperarse para intentas pegarte"
                              "pero no lo logra "
-                             call combate
-                             
-                             
-                             
+                             #call combate
 
                     "llamarle con una line Epica ":
 
-                        "Oros... Ogro estupido, Hoy sera el dia que perderas la cabeza por lo que hiciste 
-					     en Amadore, y le atacas con un amplio corte en horizontal"
-                         
+                        "Oros... Ogro estupido, Hoy sera el dia que perderas la cabeza por lo que hiciste
+					    en Amadore, y le atacas con un amplio corte en horizontal  "
+                        $ x = rempy.random.randint(1, 20)
+
+                        if x <= 3:
+                             "Oros ya estando alerta esquiva tu ataque y con mucha fuerza arranca la espada
+						      de tus manos  "
+                              #call combate
+
+                        if x>=4 and x<=20:
+                             "el cual logra atravezar su armadura, marcando la linea del corte,
+						      un buen golpe para empezar la pelea"
+                              #call combate
 
 
                     " LLamarle e insultarle ":
-                        "hola mama"
+
+                        "le dices: Oros... pedazo de mierda, Te voy a partir en trozos hijo de puta
+					    esto viene de parte de la gente de Amadore,
+					    y le atacas con un amplio corte en horizontal  "
+                        $ x = rempy.random.randint(1, 20)
+
+                        if x <= 2:
+                             "Oros ya estando alerta esquiva tu ataque y con furia en su rostro, te golpea
+						     dejandorte la cabeza dando vueltas y con una leve sensacion de vomito
+						     por las cervesas que te habias tomado "
+
+                             $ v = rempy.random.randit(1, 20)
+                             if v<=10:
+                                 "Esta sensacion se comvierte en necesidad y le vomitas encima a oros
+							      que ahora esta mas enojado "
+
+                        if x>=2 and x<=7:
+                             "Oros ya estando alerta logra esquivar tu ataque "
+                              #call combate
+
+
+                        if x>=8 and x<=20:
+                             "el cual logra atravezar su armadura, marcando la linea del corte
+						      un buen golpe antes que se levante"
+                              #call combate
+
+                "Ardio mientras tu haces lo tuyo ataca a los acompañantes de Oros
+                y empiza la revuelta"
+
 
             label fren:
-                "Ardio sonrie y los dos se lanzan a la mesa donde esta Oros"
+                 "Ardio sonrie y los dos se lanzan a la mesa donde esta Oros
+                 el esta distraido, por lo que inmediatamente atacan"
+
+                 $ x = random.randit(1, 20)
+
+                 if x <= 3:
+                     "tu tomas la delantera como siempre
+                      pero resbalas causando que Ardio lo haga tras de ti, causando la risa de varios
+                      y causando que Oros se percate de su precensia"
+                 else:
+                     "acestando un buen primer golpe"
+                      #call combate
+
             label dire:
-                "Va, pero no falles cabron- te susurra mientras se dirige a la mesa,- tu te quedas a un poco de distancia 10 metros mas o menos"
+                 "Va, pero no falles cabron- te susurra mientras se dirige a la mesa,- tu te quedas a un poco de distancia 10 metros mas o menos
+                 el se adelanta y tu te quedas a un poco de distancia 10 metros mas o menos
+			     El ataca, y tu desde atraz disparas con la ballesta"
+
+                 $ x = random.randit(1, 20)
+
+                 if x<=3:
+                     "pero que mas suerte de todos le das a Ardio en la cabeza
+					 - Bueno que mas da es hora de los golpes - dices tu "
+
+                 if x>=4 and x<=18:
+                     "golpeandolo con el perno en el brazo
+					 - ahora es el momento de los golpes - dices tu "
+
+                 if x>=19:
+                      "el pernon viaja precisamente por el aire clavandosele a ardio
+					  en el pecho, causandole daño evidente "
+
+                 #call combat
 
         label noche:
 
             "Esperan que se haga de noche y Oros pasa todo el dia halli bebiendo, llegado al punto de incluso emborracharse;"
-            "muy comveniente para ustedes... pero sin embargo Ardio a pesar de que tu intentaste que no bebiera se halla borracho tambien"
-            return
+            "muy comveniente para ustedes... pero sin embargo Ardio a pesar de que tu intentaste que no bebiera se encuentra borracho tambien"
+            menu:
+                "hijo de puta":
+                    jump hp
+
+                "   cabron  ":
+                    jump hp
+
+                "pedazo de mierda":
+                    jump hp
+
+                "no decir nada...":
+                    jump nada
+
+            label hp:
+                "le regañas y el te contesta:    "
+                a "¿!!! vamos a matar a ese Ogro mierda ya, no¡¡¡? "
+                "...............  "
+                "...............  "
+                "¡¡¡Si vamos a matar a ese ogro de mierda¡¡¡    grita todo el mundo"
+                "se levanta todo el mundo y se le tiran encima a  Oros y los otros que lo acompañan "
+                " ... esto es muy estupido piensas tu,  pero aprocehas los acontecimientos,  Oros esta borracho y es todo el bar
+                contra él.... "
+                "de todas formas Oros es fuerte y los derrota despues de un rató "
+                "¡¡¡es tu momento, Oros esta cansado y herido, te lanzas al ataque  "
+                #call combate
+
+            label nada:
+                "piensas -pedazo de mierda- pero no dices nada"
+                menu:
+                    "decirle que se quede ":
+                         jump sinA
+                    "vamos a por Oros ya... ":
+                        jump Ar
+                label sinA:
+
+                     "el te responde -ughhhhhhhh - y se queda dormido.
+                     bueno, ahora estas tu solo pero tienes la ventaja de estar osbrio,
+                     ademas del factor sorpresa "
+                     "recuerda aventurero que ademas de tu Espada corta, llevas una miniballesta"
+
+                     menu:
+                        "acercarte y usar espada corta  ":
+                            jump ec
+                        "usar la ballesta desde halli ":
+                            jump mb
+
+
+                     label mb:
+                             "tranquilamente le disparas con la ballesta"
+                             $ x= ramdon.randit (1, 20)
+
+                             if x>=0 and x<=18:
+                                 "golpeandolo con el perno en el brazo
+							     El se voltea y te ve, con ojos perdidos de la borrachera"
+                                 "- ahora es el momento de los golpes - piensas "
+
+                                 #call combate
+
+                             if x>=19:
+
+                                 "el pernon viaja precisamente por el aire clavandosele a ardio
+							     en la cabeza, haciendolo sangrar y estar confundido
+							     tu aprovechas esta situacion para acercarte a el y acuchillarle"
+
+                                 $ v= ramdon.randit (1, 20)
+
+                                 if v>=10:
+
+                                     "lo cual haces con suprema destreza degollandole por detras, llenando
+								     asi todo el suelo con su sangre "
+                                     "ahora todo es mas sencillo solo tienes que encargarte de los otros
+                                     2 que le acompañaban "
+                                      #call combate
+
+                                 else:
+
+                                     "lo cual haces con suprema destreza clavandole la espada por el costado
+                                      haciendole un monton de daño
+                                      pero ahora si empieza el manbo "
+                                      #call combate
         label rato:
 
             "Tu insiste en mejor esperar un rató"
