@@ -9,6 +9,8 @@ define heroe_vida_max = 200
 define heroe_hp = heroe_vida_max
 define ataher= 100
 define a = Character("Ardio")
+define ck = Character("Cantinero")
+define yo = Character("dices")
 
 $ enemigo = "ogro"
 
@@ -284,40 +286,92 @@ label start:
         label rato:
 
             "Tu insiste en mejor esperar un rató"
-            "Esperan unos 20 minutos y Ardio tan impaciente como siempre debido a que no dijiste un tiempo exacto se levanta derrepente, llamando un poco la atencion"
+            "Esperan unos 20 minutos y Ardio tan impaciente como siempre, se levanta derrepente llamando un poco la atencion"
 
             menu:
                 "¿te levantas?"
 
                 "si.":
                     "te levantas tras el rapido, haciendolo todo un poco mas sospechoso"
+                    "pero bien sabes que no lo podras comvencer asi que no gastas saliva intentandolo"
+                    "mas bien la desicion que tienes que tomar es..."
+
+                    menu:
+                        "¿te quedas detras?":
+                            "esta vez te quedas atras, de todas formas este movimiento tan poco elegante
+                            es culpa del invecil de Ardio"
+                            "y Ardio mientras tu piensas en esto, ataca a Oros asi nada mas, empezando una revuelta"
+                            #call combate
+
+
+                        "¿te adelantas?":
+                            " tu tomas la delantera como siempre
+        					Y ya estando en esta situacion lo unico que te queda es atacar"
+
+                            $ x = random.randit(1, 20)
+
+                            if x<=2:
+                                "pero resbalas causando que Ardio lo haga tras de ti, causando la risa de varios
+        						y causando que Oros se percate de su precensia"
+                            else:
+                                "y sorprendiendole le causas el primer golpe "
+                                #call combate
 
                 "no.":
 
                     "Tu disimulas quedandote, el te mira y sigue sin mas"
-                    "-de todas formas tengo mi miniballesta y otro compañero no me vendria mal- te dices;"
+                    "-de todas formas tengo mi miniballesta y otro compañero no me vendria mal-    te dices;"
+                    " El ataca, y tu desde atraz disparas con la ballesta"
+                    $ x = random.randit (1, 20)
 
+                    if x<=3:
+                         "pero que cosa... de todos le das a Ardio en la espalda..
+                    	  esa no era tu intencion pero,
+                         -Bueno que mas da es hora de los golpes - dices tu "
+                         #call combate
+                    if x>=4 and x<=18:
+                         "golpeando a Oros con un perno en el brazo
+                          - ahora es el momento de los golpes - dices tu "
+                          #call combate
+                    if x>=19:
+                         "el pernon viaja precisamente por el aire clavandosele a ardio
+                		 en el pecho, causandole daño evidente "
+                           #call combate
 
     return
 
     label no:
-        " Respondes en negativa, pretendes esperar un mejor momento para matar a Oros, aquel peligroso ogro que se les encargo"
-        "pero aun asi este movimiento descuidado de tu compañero causa miradas de aquellos cercanos,el cantinero con su voz ronca te dice -ya vienen ustedes nuckheald a armar revuelo"
+         "Respondes en negativa, pretendes esperar un mejor momento para matar a Oros, que es el encargo que les dejaron en Amadore"
+         "pero aun asi este movimiento descuidado de tu compañero causa miradas de aquellos cercanos,el cantinero con su voz ronca te dice"
+         ck"-ya vienen ustedes nuckheald a armar revuelo... dejen eso hombres  "
 
-        menu:
+         menu:
             "que accion tomaras?"
 
-            "intentar usar Carisma":
-                "Le dices: mi amigo es algo maleducado, le pedi su espada corta para afeitarme y me la apasado asi nada mas con ese ruido, no tenemos encargo ahora mismo"
+            "intentas comvencerlo":
+                 yo" mi amigo es algo maleducado, le pedi su espada corta para afeitarme y me la apasado asi nada mas con ese ruido, no tenemos encargo ahora mismo
+                 el cantinero no se lo traga del todo, pero opta por una aptitud indiferente y no comenta nada mas..."
+                 jump normal
 
-            "no responder":
-                "Te quedas callado,cosa que normalmente seria incomoda, pero con el ruido no pasa por tal; ademas de que el caninero parece haber lidiado con muchos de tu calaña"
+
+            "no respondes":
+                 yo"Te quedas callado,cosa que normalmente seria incomoda, pero con el ruido no pasa por tal; ademas de que el caninero parece haber lidiado con muchos de tu calaña"
+                 "por lo que determinas que no hay problema "
+                 jump normal
 
 
-            "atemorizarlo":
 
-                "Tu a esto le respondes con un seco -No me hables maldito cantinero, sirve y calla- el caninero escupe al frnte tuya y calla sin mas"
+            "le atemorizas ":
 
+                 yo"-No me hables maldito cantinero, sirve y calla- el caninero escupe al frnte tuya y calla sin mas"
+                 jump tejo
+
+
+
+         label normal:
+
+             a"psshh.....psshhh....  {size=-5}cual es tu puto problema %(p)s me haces quedar como un estupido... vamos a matar a ese
+             ogro estupido ya....{/size}  estupido....      "
 
 
 
